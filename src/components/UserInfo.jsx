@@ -14,11 +14,12 @@ function UserInfo({ setStep }) {
       <div className='flex flex-col mb-4'>
         <label className='mb-2 font-semibold' >Name</label>
         <input type="text" {...register('name')} className='p-2 outline-fuchsia-800 outline-1 rounded-sm' />
-        {errors.name?.error && <p>{errors.name?.error}</p>}
+        {errors.name && <p className='text-red-500 italic text-[0.8rem]'>{errors.name?.message}</p>}
       </div>
       <div className='flex flex-col mb-4'>
         <label className='mb-2 font-semibold' >DOB</label>
         <input type="date" {...register('dob')} className='p-2 outline-fuchsia-800 outline-1 rounded-sm' />
+        {errors.dob && <p className='text-red-500 italic text-[0.8rem]'>{errors.dob?.message}</p>}
       </div>
       <div className='flex flex-col mb-4'>
         <label className='mb-2 font-semibold' >Address</label>

@@ -17,7 +17,7 @@ function App() {
     phoneNumber: z.string().regex(/^\d{10}$/, 'Enter a valid 10-digit phone number').transform((val) => Number(val)),
   })
   const otpSchema = z.object({
-    otp: z.string().regex(/^\d{6}$/, 'OTP must be a 6-digit number'),
+    otp: z.string().regex(/^\d{6}$/, 'OTP must be a 6-digit number').transform((val) => Number(val)),
   })
 
   const dataSchema = z.object({
