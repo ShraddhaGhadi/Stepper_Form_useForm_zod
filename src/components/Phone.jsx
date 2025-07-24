@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useFormContext } from 'react-hook-form'
 
 function Phone({ setStep }) {
@@ -6,13 +6,17 @@ function Phone({ setStep }) {
     const { register, handleSubmit, formState: { isValid, errors, isSubmitting, isSubmitSuccessful } } = methods;
 
     console.log(errors.phoneNumber);
-    // console.log(isValid)
+    console.log(isValid)
     const onSubmit = async (data) => {
         await new Promise((resolve) => setTimeout(resolve, 1000));
         console.log(data)
         if (isSubmitSuccessful == true)
             setStep(2);
     }
+    useEffect((data) => {
+        onSubmit(data);
+    }, [onSubmit])
+
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <div className='flex flex-col mb-4'>

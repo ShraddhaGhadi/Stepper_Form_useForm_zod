@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useFormContext } from 'react-hook-form'
 
 function Otp({ setStep }) {
-  const [timeLeft, setTimeLeft] = useState(10);
+  const [timeLeft, setTimeLeft] = useState(30);
 
   useEffect(() => {
     if (timeLeft === 0){
